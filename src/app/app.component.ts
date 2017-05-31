@@ -1,30 +1,46 @@
 import { Component, OnInit } from '@angular/core';
 
+const copyText: string = "Copy";
+const copiedText: string = "Copied!";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
   pageTitle: string = 'Text to Binary';
   isCopied: boolean = false;
-  copyButtonText: string = 'Copy';
-  inputText: string = null;
-  result: string = 'Just me';
+  copyButtonText: string = copyText;
+  inputText: string = "";
+  result: string = '';
+  copyTooltip: string = "Copy to Clipboard"
 
-  ngOnInit() {
 
+  onCopyClick(): void {
+    this.isCopied = true;
+    this.copyButtonText = copiedText;
   }
 
-  onCopyClick() {
-    console.log('Clicked copy: ' + this.inputText);
-    this.copyButtonText = 'Copied!';
+  onKeyup(): void {
+    this.result = this.toBinary(this.inputText);
   }
 
-  onKeyup(inputText: string) {
-    this.inputText = inputText;
-    console.log(this.inputText);
-    this.result = this.inputText;
+  onMouseLeave(): void {
+    this.isCopied = false;
+    this.copyButtonText = copyText;
+  }
+
+  onClear(): void {
+    console.log('Clearing!');
+    this.inputText = "";
+    this.result = "";
+  }
+
+  toBinary(input: string): string {
+    return input.split('').map(function (char) {
+        return char.charCodeAt(0).toString(2);
+    }).join(' ');
   }
 }

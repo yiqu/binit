@@ -1,19 +1,23 @@
 <h1 id="header" class="wrap">{{pageTitle}}</h1>
 
 <div id="input" class="wrap"> 
-  <textarea #input (keyup)="onKeyup(input.value)" class="input-area" mdInput placeholder="Hello World!"></textarea>
+  <textarea #input [(ngModel)]="inputText" (keyup)="onKeyup()" class="input-area" 
+    mdInput placeholder="Text to convert..."></textarea>
 </div>
 
 <div id="control" class="wrap">
-  <button md-raised-button color="primary"><md-icon>Clear</md-icon></button>
-  <button md-raised-button color="primary"><md-icon>Switch</md-icon></button>
+  <button md-raised-button color="primary" (click)="onClear()">Clear</button>
+  <button md-raised-button color="primary">Switch</button>
 </div>
 
 <div id="result" class="wrap">
-  {{inputText}}
+  {{result}}
 </div>
 
-<button md-raised-button [class.copy-success]= "isCopied"
-  ngxClipboard cbContent={{result}} (cbOnSuccess)="isCopied=true"
-  (click)="onCopyClick()">{{copyButtonText}}
-</button>
+<div id="control-copy" class="wrap">
+  <button md-raised-button color="primary" [class.copy-success]= "isCopied"
+    ngxClipboard cbContent={{result}} (cbOnSuccess)="isCopied=true"
+    (click)="onCopyClick()" (mouseleave)="onMouseLeave()"
+    mdTooltip={{copyTooltip}} mdTooltipPosition="below"> {{copyButtonText}}
+  </button>
+</div>
