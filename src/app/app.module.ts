@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { MdButtonModule } from '@angular/material';
+import { ClipboardModule } from 'ngx-clipboard';
 
 import { AppComponent } from './app.component';
 import 'hammerjs';
@@ -14,6 +15,7 @@ import 'hammerjs';
   ],
   imports: [
     BrowserModule,
+    ClipboardModule,
     FormsModule,
     HttpModule,
     MdButtonModule

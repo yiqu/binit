@@ -1,4 +1,19 @@
-<h1>
-  {{title}}
-</h1>
-<button md-raised-button color="primary"><md-icon>search</md-icon></button>
+<h1 id="header" class="wrap">{{pageTitle}}</h1>
+
+<div id="input" class="wrap"> 
+  <textarea #input (keyup)="onKeyup(input.value)" class="input-area" mdInput placeholder="Hello World!"></textarea>
+</div>
+
+<div id="control" class="wrap">
+  <button md-raised-button color="primary"><md-icon>Clear</md-icon></button>
+  <button md-raised-button color="primary"><md-icon>Switch</md-icon></button>
+</div>
+
+<div id="result" class="wrap">
+  {{inputText}}
+</div>
+
+<button md-raised-button [class.copy-success]= "isCopied"
+  ngxClipboard cbContent={{result}} (cbOnSuccess)="isCopied=true"
+  (click)="onCopyClick()">{{copyButtonText}}
+</button>

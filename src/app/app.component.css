@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+}
+
+#input {
+  text-align: center;
+}
+
+.input-area {
+  min-height: 9rem;
+  min-width: 25rem;
+  max-width: 25rem;
+}
+
+#control {
+  text-align: center;
+}
+
+.copy-success {
+  background-color: #00BCD4;
+  color: #fff;
+}
+
+#result {
+  background: #fff;
+  border: 2px solid #1976D2;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.24),0 0 2px rgba(0,0,0,0.12);
+  margin-bottom: 24px;
+  word-wrap: break-word;
+  min-height: 9rem;
+  max-width: 35rem;
+  font-family: monospace;
+  font-size: 1rem;
+}
