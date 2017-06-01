@@ -17,6 +17,7 @@ export class AppComponent {
   inputText: string = "";
   result: string = '';
   copyTooltip: string = "Copy to Clipboard"
+  clearTooltip: string = "Clear Entered Text";
   placeholderText: string = "Enter text ...";
   selections = [
     {title: 'Text to Binary', val: true, class: 'to-binary'},
@@ -46,7 +47,13 @@ export class AppComponent {
   toBinary(input: string): string {
     return input
       .split('')
-      .map(char => char.charCodeAt(0).toString(2))
+      .map(char => {
+          let res = char.charCodeAt(0).toString(2);
+          while (res.length < (8)) {
+            res = "0" + res;
+          }
+          return res;
+        })
       .join(' ');
   }
 
