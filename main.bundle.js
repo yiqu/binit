@@ -21,7 +21,7 @@ module.exports = module.exports.toString();
 /***/ 155:
 /***/ (function(module, exports) {
 
-module.exports = "<h1 id=\"header\" [ngClass]=\"text2bin === true ? 'wrap text-title' : 'wrap binary-title'\">{{pageTitle}}</h1>\r\n\r\n<div id=\"logic\" class=\"wrap\">\r\n  <md-radio-group [(ngModel)]=\"text2bin\">\r\n    <md-radio-button *ngFor=\"let selection of selections\" [value]=\"selection.val\"\r\n      [ngClass]=\"selection.class\" (change)=\"changeLogic()\">\r\n      {{selection.title}} </md-radio-button>\r\n  </md-radio-group>\r\n</div>\r\n\r\n<div id=\"input\" class=\"wrap\"> \r\n  <textarea #input [(ngModel)]=\"inputText\" (keyup)=\"onKeyup()\" class=\"input-area\" \r\n    mdInput [placeholder]=\"placeholderText\"></textarea>\r\n</div>\r\n\r\n<div id=\"control\" class=\"wrap\">\r\n  <button md-raised-button color=\"primary\" (click)=\"onClear()\">Clear</button>\r\n</div>\r\n\r\n<div id=\"result\" class=\"wrap\">\r\n  {{result}}\r\n</div>\r\n\r\n<div id=\"control-copy\" class=\"wrap\">\r\n  <button md-raised-button color=\"primary\" [class.copy-success]= \"isCopied\"\r\n    ngxClipboard cbContent={{result}} (cbOnSuccess)=\"isCopied=true\"\r\n    (click)=\"onCopyClick()\" (mouseleave)=\"onMouseLeave()\"\r\n    mdTooltip={{copyTooltip}} mdTooltipPosition=\"below\"> {{copyButtonText}}\r\n  </button>\r\n</div>\r\n"
+module.exports = "<h1 id=\"header\" [ngClass]=\"text2bin === true ? 'wrap text-title' : 'wrap binary-title'\">{{pageTitle}}</h1>\r\n\r\n<div id=\"logic\" class=\"wrap\">\r\n  <md-radio-group [(ngModel)]=\"text2bin\">\r\n    <md-radio-button *ngFor=\"let selection of selections\" [value]=\"selection.val\"\r\n      [ngClass]=\"selection.class\" (change)=\"changeLogic()\">\r\n      {{selection.title}} </md-radio-button>\r\n  </md-radio-group>\r\n</div>\r\n\r\n<div id=\"input\" class=\"wrap\"> \r\n  <textarea #input [(ngModel)]=\"inputText\" (keyup)=\"onKeyup()\" class=\"input-area\" \r\n    mdInput [placeholder]=\"placeholderText\"></textarea>\r\n</div>\r\n\r\n<div id=\"control\" class=\"wrap\">\r\n  <button md-raised-button color=\"primary\" mdTooltip={{clearTooltip}} (click)=\"onClear()\">Clear</button>\r\n</div>\r\n\r\n<div id=\"result\" class=\"wrap\">\r\n  {{result}}\r\n</div>\r\n\r\n<div id=\"control-copy\" class=\"wrap\">\r\n  <button md-raised-button color=\"primary\" [class.copy-success]= \"isCopied\"\r\n    ngxClipboard cbContent={{result}} (cbOnSuccess)=\"isCopied=true\"\r\n    (click)=\"onCopyClick()\" (mouseleave)=\"onMouseLeave()\"\r\n    mdTooltip={{copyTooltip}} mdTooltipPosition=\"below\"> {{copyButtonText}}\r\n  </button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -92,6 +92,7 @@ var AppComponent = (function () {
         this.inputText = "";
         this.result = '';
         this.copyTooltip = "Copy to Clipboard";
+        this.clearTooltip = "Clear Entered Text";
         this.placeholderText = "Enter text ...";
         this.selections = [
             { title: 'Text to Binary', val: true, class: 'to-binary' },
@@ -116,7 +117,13 @@ var AppComponent = (function () {
     AppComponent.prototype.toBinary = function (input) {
         return input
             .split('')
-            .map(function (char) { return char.charCodeAt(0).toString(2); })
+            .map(function (char) {
+            var res = char.charCodeAt(0).toString(2);
+            while (res.length < (8)) {
+                res = "0" + res;
+            }
+            return res;
+        })
             .join(' ');
     };
     AppComponent.prototype.toText = function (input) {
