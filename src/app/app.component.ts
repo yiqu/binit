@@ -11,11 +11,17 @@ const copiedText: string = "Copied!";
 export class AppComponent {
 
   pageTitle: string = 'Text to Binary';
+  
+  text2bin: boolean = true;
   isCopied: boolean = false;
   copyButtonText: string = copyText;
   inputText: string = "";
   result: string = '';
   copyTooltip: string = "Copy to Clipboard"
+  selections = [
+    {title: 'To Binary', val: true},
+    {title: 'To Text', val: false}
+  ];
 
 
   onCopyClick(): void {
@@ -25,6 +31,7 @@ export class AppComponent {
 
   onKeyup(): void {
     this.result = this.toBinary(this.inputText);
+    console.log(this.result);
   }
 
   onMouseLeave(): void {
@@ -39,8 +46,16 @@ export class AppComponent {
   }
 
   toBinary(input: string): string {
-    return input.split('').map(function (char) {
-        return char.charCodeAt(0).toString(2);
-    }).join(' ');
+    return input
+      .split('')
+      .map(char => char.charCodeAt(0).toString(2))
+      .join(' ');
+  }
+
+  toText(input: string): string {
+    return input
+      .split(/\s/)
+      .map(val =>  String.fromCharCode(parseInt(val, 2)))
+      .join("");
   }
 }

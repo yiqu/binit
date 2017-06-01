@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MdButtonModule, MdTooltipModule } from '@angular/material';
+import { MdButtonModule, MdTooltipModule, MdRadioModule } from '@angular/material';
 import { ClipboardModule } from 'ngx-clipboard';
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import 'hammerjs';
     FormsModule,
     HttpModule,
     MdButtonModule,
+    MdRadioModule,
     MdTooltipModule
   ],
   providers: [],
