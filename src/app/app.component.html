@@ -1,17 +1,16 @@
-<h1 id="header" class="wrap">{{pageTitle}}</h1>
+<h1 id="header" [ngClass]="text2bin === true ? 'wrap text-title' : 'wrap binary-title'">{{pageTitle}}</h1>
 
 <div id="logic" class="wrap">
   <md-radio-group [(ngModel)]="text2bin">
-    <md-radio-button *ngFor="let selection of selections" [value]="selection.val">
-      {{selection.title}}
-    </md-radio-button>
+    <md-radio-button *ngFor="let selection of selections" [value]="selection.val"
+      [ngClass]="selection.class" (change)="changeLogic()">
+      {{selection.title}} </md-radio-button>
   </md-radio-group>
 </div>
-{{text2bin}}
 
 <div id="input" class="wrap"> 
   <textarea #input [(ngModel)]="inputText" (keyup)="onKeyup()" class="input-area" 
-    mdInput placeholder="Text to convert..."></textarea>
+    mdInput [placeholder]="placeholderText"></textarea>
 </div>
 
 <div id="control" class="wrap">

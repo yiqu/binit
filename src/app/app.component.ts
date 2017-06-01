@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-const copyText: string = "Copy";
-const copiedText: string = "Copied!";
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,37 +7,38 @@ const copiedText: string = "Copied!";
 })
 export class AppComponent {
 
+  copyText: string = "Copy";
+  copiedText: string = "Copied!";
+
   pageTitle: string = 'Text to Binary';
-  
   text2bin: boolean = true;
   isCopied: boolean = false;
-  copyButtonText: string = copyText;
+  copyButtonText: string = this.copyText;
   inputText: string = "";
   result: string = '';
   copyTooltip: string = "Copy to Clipboard"
+  placeholderText: string = "Enter text ...";
   selections = [
-    {title: 'To Binary', val: true},
-    {title: 'To Text', val: false}
+    {title: 'Text to Binary', val: true, class: 'to-binary'},
+    {title: 'Binary to Text', val: false, class: 'to-text'}
   ];
 
 
   onCopyClick(): void {
     this.isCopied = true;
-    this.copyButtonText = copiedText;
+    this.copyButtonText = this.copiedText;
   }
 
   onKeyup(): void {
-    this.result = this.toBinary(this.inputText);
-    console.log(this.result);
+    this.convertIt();
   }
 
   onMouseLeave(): void {
     this.isCopied = false;
-    this.copyButtonText = copyText;
+    this.copyButtonText = this.copyText;
   }
 
   onClear(): void {
-    console.log('Clearing!');
     this.inputText = "";
     this.result = "";
   }
@@ -57,5 +55,22 @@ export class AppComponent {
       .split(/\s/)
       .map(val =>  String.fromCharCode(parseInt(val, 2)))
       .join("");
+  }
+
+  convertIt() {
+    this.result = this.text2bin === true ? this.toBinary(this.inputText) : this.toText(this.inputText);
+  }
+
+  changeLogic() {
+    this.text2bin = this.text2bin === true ? false : true;
+    if (this.text2bin === true) {
+      this.placeholderText = "Enter text ...";
+      this.pageTitle = "Text to Binary";
+    } else {
+      this.placeholderText = "Enter binary ...";
+      this.pageTitle = "Binary to Text";
+    }
+    console.log(this.text2bin);
+    this.convertIt();
   }
 }
