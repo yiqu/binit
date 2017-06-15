@@ -1,4 +1,4 @@
-# BinIt
+# Binit
 
 Simple txt2binary or binary2text converter.
 
