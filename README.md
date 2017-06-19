@@ -1,6 +1,6 @@
 # Binit
 
-Simple txt2binary or binary2text converter.
+Simple txt2binary or binary2text converter. Live demo: https://yiqu.github.io/binit/
 
 ## Watch
 
