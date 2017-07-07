@@ -1,4 +1,5 @@
-<h1 id="header" [ngClass]="text2bin === true ? 'wrap text-title' : 'wrap binary-title'">{{pageTitle}}</h1>
+<h1 id="header" [ngClass]="text2bin === true ? 'wrap text-title' : 'wrap binary-title'">{{pageTitle}}
+  <span class="version">v{{appVersion}}</span></h1>
 
 <div id="logic" class="wrap">
   <md-radio-group [(ngModel)]="text2bin">

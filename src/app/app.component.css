@@ -72,3 +72,7 @@ h1 {
   max-height: 5rem;
   color: #999999;
 }
+
+.version {
+  font-size: 0.7rem;
+}

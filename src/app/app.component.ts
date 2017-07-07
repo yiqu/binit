@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// App version
+const { version: appVersion } = require('../../package.json')
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
 
+  appVersion: string;
   copyText: string = "Copy";
   copiedText: string = "Copied!";
 
@@ -24,6 +28,9 @@ export class AppComponent {
     {title: 'Binary to Text', val: false, class: 'to-text'}
   ];
 
+  constructor() {
+    this.appVersion = appVersion
+  }
 
   onCopyClick(): void {
     this.isCopied = true;
