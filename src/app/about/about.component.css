@@ -1,0 +1,23 @@
+:host {
+  text-align: center;
+}
+
+.date {
+  font-size: 13px;
+  color: #008000;
+}
+
+.version {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.change-text {
+  color: #737373;
+}
+
+.change-title {
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: underline;
+}

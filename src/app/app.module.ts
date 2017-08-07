@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutModule } from './about/about.module';
+import { BodyModule } from './body/body.module';
+import { NotFoundModule } from './404/404.module';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
 import { HttpModule } from '@angular/http';
-
-import { MdButtonModule, MdTooltipModule, MdRadioModule } from '@angular/material';
-import { ClipboardModule } from 'ngx-clipboard';
-
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 
@@ -14,17 +15,20 @@ import 'hammerjs';
   declarations: [
     AppComponent
   ],
+
   imports: [
+    AboutModule,
+    BodyModule,
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    ClipboardModule,
-    FormsModule,
     HttpModule,
-    MdButtonModule,
-    MdRadioModule,
-    MdTooltipModule
+    NotFoundModule,
+    RouterModule
   ],
+
   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
