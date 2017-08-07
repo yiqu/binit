@@ -2,11 +2,12 @@
 
 /* Import Material theme*/
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css?family=Cairo|Roboto');
 
 /* Global Properties */
 
 
 .wrap {
-  max-width: 600px;
+  max-width: 50rem;
   margin: 1rem auto 1rem;
 }

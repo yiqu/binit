@@ -27,7 +27,7 @@ export class AboutComponent {
     {
       version: '1.1.1',
       date: new Date('8/07/17'),
-      changes: 'Added CHANGELOG page'
+      changes: 'Added CHANGE LOG page'
     }
   ];
 }
