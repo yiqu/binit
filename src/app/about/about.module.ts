@@ -2,6 +2,8 @@ import { AboutComponent } from './about.component';
 import { CommonModule } from '@angular/common';
 import { MdListModule } from '@angular/material';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { routes } from './about.routing';
 
 /**
  * About module
@@ -9,12 +11,11 @@ import { NgModule } from '@angular/core';
 @NgModule({
   imports: [
     MdListModule,
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes)
   ],
 
-  exports: [
-    AboutComponent
-  ],
+  exports: [],
 
   declarations: [
     AboutComponent

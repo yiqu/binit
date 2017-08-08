@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 /**
- * This class represents the About (changelog) component.
+ * This class represents the lazy loaded About (changelog) component.
  */
 @Component({
   moduleId: module.id,

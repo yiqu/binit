@@ -2,17 +2,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BodyComponent } from './body/body.component';
 import { NotFoundComponent } from './404/404.component';
-import { AboutComponent } from './about/about.component';
 
+
+/**
+ * Routing for app.
+ * For re-direct:
+ * { path: '', redirectTo: '/analyze', pathMatch: 'full' },
+ * 
+ */
 const routes: Routes = [
   {
     path: '',
     component: BodyComponent
   },
-  //{ path: '', redirectTo: '/analyze', pathMatch: 'full' },
   {
-    path: 'about',
-    component: AboutComponent
+    path: 'about', // Lazy loaded
+    loadChildren: './about/about.module#AboutModule'
   },
   {
     path: '**',
@@ -24,9 +29,11 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes)
   ],
+
   exports: [
     RouterModule
   ],
+  
   declarations: []
 })
 export class AppRoutingModule { }
