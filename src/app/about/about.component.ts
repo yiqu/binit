@@ -28,6 +28,11 @@ export class AboutComponent {
       version: '1.1.1',
       date: new Date('8/07/17'),
       changes: 'Added CHANGE LOG page'
+    },
+    {
+      version: '1.1.2',
+      date: new Date('8/08/17'),
+      changes: 'Updated the 404 page'
     }
   ];
 }

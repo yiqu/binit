@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 /**
- * This class represents the 404 component.
+ * This class represents the 404 component, shown when page is not found.
  */
 @Component({
   moduleId: module.id,
