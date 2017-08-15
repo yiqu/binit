@@ -2,11 +2,6 @@
 
 Simple text-to-binary or binary-to-text converter. Live demo: https://yiqu.github.io/binit/
 
-Material components used:
-- Textarea
-- [Button](https://material.angular.io/components/component/button)
-- [Radio Button](https://material.angular.io/components/component/radio)
-
 Third party library used:
 - [ngx-clipboard](https://www.npmjs.com/package/ngx-clipboard)
 
