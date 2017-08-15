@@ -2,7 +2,7 @@
 
 Simple text-to-binary or binary-to-text converter. Live demo: https://yiqu.github.io/binit/
 
-Third party library used:
+Click-copy:
 - [ngx-clipboard](https://www.npmjs.com/package/ngx-clipboard)
 
 
