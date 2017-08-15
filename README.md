@@ -2,10 +2,6 @@
 
 Simple text-to-binary or binary-to-text converter. Live demo: https://yiqu.github.io/binit/
 
-Click-copy:
-- [ngx-clipboard](https://www.npmjs.com/package/ngx-clipboard)
-
-
 ## Fork and Run
 
 Install Angular-CLI `npm install -g @angular/cli`
