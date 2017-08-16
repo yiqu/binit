@@ -124,7 +124,6 @@ export class BodyComponent {
       this.placeholderText = "Enter binary ...";
       this.pageTitle = "Binary to Text";
     }
-    console.log(this.text2bin);
     this.convertIt();
   }
 }

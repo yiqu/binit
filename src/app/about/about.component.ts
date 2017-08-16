@@ -33,6 +33,11 @@ export class AboutComponent {
       version: '1.1.2',
       date: new Date('8/08/17'),
       changes: 'Updated the 404 page'
+    },
+    {
+      version: '1.1.3',
+      date: new Date('8/16/17'),
+      changes: 'Chores: updated dependencies'
     }
   ];
 }
