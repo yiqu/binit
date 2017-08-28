@@ -5,7 +5,7 @@ import { NotFoundComponent } from './404/404.component';
 
 
 /**
- * Routing for app.
+ * Routes
  * For re-direct:
  * { path: '', redirectTo: '/analyze', pathMatch: 'full' },
  * 
@@ -26,6 +26,10 @@ const routes: Routes = [
 ];
 
 
+/**
+ * Routing for app.
+ * 
+ */
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
