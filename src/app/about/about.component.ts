@@ -38,6 +38,11 @@ export class AboutComponent {
       version: '1.1.3',
       date: new Date('8/16/17'),
       changes: 'Chores: updated dependencies'
+    },
+    {
+      version: '1.2.3',
+      date: new Date('10/05/17'),
+      changes: 'Chores: updated dependencies'
     }
   ];
 }

@@ -3,9 +3,9 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { MdButtonModule, 
-  MdTooltipModule, 
-  MdRadioModule } from '@angular/material';
+import { MatButtonModule, 
+  MatTooltipModule, 
+  MatRadioModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
 /**
@@ -18,9 +18,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ClipboardModule,
     FormsModule,
-    MdButtonModule,
-    MdTooltipModule,
-    MdRadioModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatRadioModule,
     RouterModule
   ],
 
