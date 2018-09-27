@@ -13,7 +13,7 @@ export class AboutComponent {
   constructor() {}
     
   // change log information array
-  changelog: Array<Object> = [
+  changelog: Array<any> = [
     {
       version: '1.0.0',
       date: new Date('5/30/17'),
@@ -37,6 +37,16 @@ export class AboutComponent {
     {
       version: '1.1.3',
       date: new Date('8/16/17'),
+      changes: 'Chores: updated dependencies'
+    },
+    {
+      version: '1.2.3',
+      date: new Date('10/05/17'),
+      changes: 'Chores: updated dependencies'
+    },
+    {
+      version: '1.3.3',
+      date: new Date('10/30/17'),
       changes: 'Chores: updated dependencies'
     }
   ];

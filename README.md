@@ -1,6 +1,6 @@
 # Binit
 
-Simple text-to-binary or binary-to-text converter. Live demo: https://yiqu.github.io/binit/
+Simple text to binary or binary-to-text converter. Live demo: https://yiqu.github.io/binit/
 
 ## Fork and Run
 
