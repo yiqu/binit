@@ -1,4 +1,4 @@
-# Binit
+# Binit [![Build Status](https://travis-ci.org/yiqu/binit.svg?branch=master)](https://travis-ci.org/yiqu/binit)
 
 Simple text to binary or binary-to-text converter. Live demo: https://yiqu.github.io/binit/
 
