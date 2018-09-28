@@ -48,6 +48,11 @@ export class AboutComponent {
       version: '1.3.3',
       date: new Date('10/30/17'),
       changes: 'Chores: updated dependencies'
-    }
+    },
+    {
+      version: '1.3.4',
+      date: new Date('09/27/18'),
+      changes: 'Added Travis CI to project.'
+    },
   ];
 }
